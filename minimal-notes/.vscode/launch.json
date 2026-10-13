@@ -8,7 +8,7 @@
             "type": "editor-browser",
             "request": "launch",
             "name": "Open index.html",
-            "url": "file:///Users/brandonbrooks/Downloads/portfolio/minimal-notes/index.html"
+            "url": "file:///Users/brandonbrooks/Downloads/portfolio/first%20project%20folder/minimal-notes/index.html"
         }
     ]
 }

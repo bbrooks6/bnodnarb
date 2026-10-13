@@ -33,10 +33,16 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 
 h1 { font-size: 20px; font-weight: 600; margin: 0 0 32px; }
 h2 { font-size: 14px; font-weight: 500; color: var(--muted); margin: 48px 0 12px; }
+.article-title { font-size: 20px; font-weight: 600; color: var(--text); margin: 48px 0 12px; }
+.app-preview { display: block; width: 100%; height: 640px; border: 0; border-radius: 14px; margin: 24px 0; }
 .label, .muted { color: var(--muted); font-size: 14px; }
 
 /* Bio header: label on the left, switch on the right (flexbox) */
 .bio-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+#bio p { margin: 0 0 16px; }
+#bio figure { margin: 24px 0; }
+.bio-photo { display: block; width: 100%; max-height: 340px; object-fit: cover; border-radius: 8px; }
+#bio figcaption { color: var(--muted); font-size: 13px; margin-top: 8px; }
 
 /* Segmented control: two buttons that look like one pill */
 .switch { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 2px; }
@@ -51,9 +57,9 @@ h2 { font-size: 14px; font-weight: 500; color: var(--muted); margin: 48px 0 12px
 
 /* Lists: no bullets */
 .plain { list-style: none; margin: 0; padding: 0; }
-.plain li a { display: flex; justify-content: space-between; gap: 16px; padding: 4px 0; }
+.plain li a, .plain li .entry { display: flex; justify-content: space-between; gap: 16px; padding: 4px 0; }
 .plain .date { color: var(--muted); font-size: 14px; white-space: nowrap; }
-#notes li a { display: block; }   /* notes have no dates */
+#notes li a, #notes li .entry { display: block; }   /* notes have no dates */
 
 .logo-slot {
   position: fixed;
