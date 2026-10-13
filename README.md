@@ -21,7 +21,7 @@ built it.
 ## Project structure
 
 ```text
-minimal-notes/
+src/
 ├── index.html
 ├── assets/
 │   ├── css/styles.css
@@ -34,15 +34,15 @@ minimal-notes/
 
 ## Getting started
 
-Open `minimal-notes/index.html` in a browser to view the site locally. You can
-also publish the `minimal-notes` folder with a static hosting service.
+Open `src/index.html` in a browser to view the site locally. You can
+also publish the `src` folder with a static hosting service.
 
 ## Customize
 
-- Edit the bio, notes, and blog entries in `minimal-notes/assets/js/app.js`.
-- Update layout and colors in `minimal-notes/assets/css/styles.css`.
-- Add or edit pages in `minimal-notes/notes/` and `minimal-notes/blogs/`.
-- Replace the logo at `minimal-notes/assets/images/logo.png`.
+- Edit the bio, notes, and blog entries in `src/assets/js/app.js`.
+- Update layout and colors in `src/assets/css/styles.css`.
+- Add or edit pages in `src/notes/` and `src/blogs/`.
+- Replace the logo at `src/assets/images/logo.png`.
 
 Replace these instructions with any setup, development, or contribution
 guidance specific to your project.
