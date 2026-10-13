@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+  CLONE NOTES: a "text-first personal site" (layout inspired by leerob.com).
+  The pattern: one narrow column, a handle, a short bio with a Default/Long
+  switch, then plain lists of Notes and Blogs. No images, no heavy chrome.
+  The original is a Next.js app; this version is plain HTML/CSS/JS so you
+  can see every moving part. See the porting notes at the bottom of app.js.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>hey, i'm Brandon
+  </title>
+  <meta name="description" content="Developer and writer.">
+
+  <!-- theme-color tints the phone's browser bar to match the page -->
+  <meta name="theme-color" content="#1b1a19">
+
+  <!-- Open Graph: the preview card shown when the link is shared.
+       Add images/og.png (1280x720) to make it work. -->
+  <meta property="og:title" content="Alex Rivera">
+  <meta property="og:description" content="Developer and writer.">
+  <meta property="og:image" content="images/og.png">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <aside class="logo-slot" aria-label="Logo">
+    <img src="images/logo.png" alt="Illustrated portrait logo">
+  </aside>
+  <main>
+    <!-- The handle is the page's h1 and links to a social profile -->
+    <h1><a href="https://x.com/">@bnroadn</a></h1>
+
+    <!-- Bio: label + two buttons that act like a segmented control.
+         aria-pressed tells screen readers which one is active. -->
+    <section aria-labelledby="bio-label">
+      <div class="bio-head">
+        <span id="bio-label" class="label">Bio</span>
+        <div class="switch" role="group" aria-label="Bio length">
+          <button type="button" data-mode="default" aria-pressed="true">Default</button>
+          <button type="button" data-mode="long" aria-pressed="false">Long</button>
+        </div>
+      </div>
+      <!-- aria-live: screen readers announce the text when it changes -->
+      <p id="bio" aria-live="polite"></p>
+    </section>
+
+    <!-- Filled in by app.js from the data object -->
+    <section><h2>Notes</h2><ul id="notes" class="plain"></ul></section>
+    <section><h2>Blogs</h2><ul id="blogs" class="plain"></ul></section>
+
+    <noscript><p class="muted">Enable JavaScript to see the full page.</p></noscript>
+  </main>
+</body>
+</html>

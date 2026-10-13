@@ -1,0 +1,82 @@
+/* ==========================================================================
+   styles.css: a calm, text-first look. All colors live in variables, so
+   re-theming the whole site means editing six lines.
+   ========================================================================== */
+:root {
+  --bg: #1b1a19;        /* warm near-black (same as the theme-color meta) */
+  --text: #ece9e4;
+  --muted: #8f8b85;
+  --line: #2e2c2a;
+  --accent: #ece9e4;
+}
+/* Light theme for visitors whose OS is set to light */
+@media (prefers-color-scheme: light) {
+  :root { --bg: #faf9f7; --text: #1c1b1a; --muted: #77736d; --line: #e7e4df; --accent: #1c1b1a; }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* One narrow column, centered. This single rule creates the whole "feel". */
+main { max-width: 600px; margin: 0 auto; padding: 72px 24px 96px; }
+
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+h1 { font-size: 20px; font-weight: 600; margin: 0 0 32px; }
+h2 { font-size: 14px; font-weight: 500; color: var(--muted); margin: 48px 0 12px; }
+.label, .muted { color: var(--muted); font-size: 14px; }
+
+/* Bio header: label on the left, switch on the right (flexbox) */
+.bio-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+
+/* Segmented control: two buttons that look like one pill */
+.switch { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 2px; }
+.switch button {
+  background: none; border: 0; color: var(--muted);
+  font: inherit; font-size: 13px; padding: 2px 12px;
+  border-radius: 999px; cursor: pointer;
+}
+/* The ACTIVE button is styled by the aria-pressed attribute itself:
+   one source of truth for both accessibility and appearance. */
+.switch button[aria-pressed="true"] { background: var(--line); color: var(--text); }
+
+/* Lists: no bullets */
+.plain { list-style: none; margin: 0; padding: 0; }
+.plain li a { display: flex; justify-content: space-between; gap: 16px; padding: 4px 0; }
+.plain .date { color: var(--muted); font-size: 14px; white-space: nowrap; }
+#notes li a { display: block; }   /* notes have no dates */
+
+.logo-slot {
+  position: fixed;
+  top: 72px;
+  left: clamp(24px, 6vw, 96px);
+  width: 80px;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.logo-slot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+@media (max-width: 900px) {
+  .logo-slot {
+    position: static;
+    margin: 24px auto 0 24px;
+  }
+}
