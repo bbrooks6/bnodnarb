@@ -18,23 +18,32 @@ const site = {
         "Beyond the screen, one of my aspirations is to open a real-life restaurant. I’d love to bring together food, hospitality, and community, and perhaps use thoughtful technology to support the day-to-day experience. For now, I’m exploring the idea while building the skills to make it possible."
       ],
       image: {
-        src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
-        alt: "Laptop displaying code on a desk",
-        caption: "A coding workspace (stock image via Unsplash)."
+        src: "https://upload.wikimedia.org/wikipedia/commons/b/b9/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg",
+        alt: "A traveler stands on a rocky peak above a sea of fog in Caspar David Friedrich’s painting.",
+        caption: "Wanderer above the Sea of Fog, c. 1818, by Caspar David Friedrich. Public-domain reproduction by Cybershot800i via Wikimedia Commons.",
+        creditHref: "https://commons.wikimedia.org/wiki/File:Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg"
+      },
+      social: {
+        href: "https://github.com/bbrooks6",
+        label: "Find me on GitHub."
+      },
+      notion: {
+        href: "https://www.notion.so/",
+        logo: "https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg"
       }
     }
   },
   notes: [
     { title: "How I am learning to learn", href: "notes/how-i-learn-new-tools.html" },
-    { title: "Writing renaissance" },
-    { title: "Working in public" },
-    { title: "On Artifical Intelligence" }
+    { title: "Writing renaissance", href: "notes/writing-renaissance.html" },
+    { title: "Working in public", href: "notes/working-in-public.html" },
+    { title: "On Artificial Intelligence", href: "notes/on-artificial-intelligence.html" }
   ],
   blogs: [
     { title: "Are there useful vibe-coded apps?", date: "June 2026", href: "blogs/useful-vibe-coded-apps.html" },
-    { title: "What we get wrong about tech", date: "March 2026" },
-    { title: "A Git guide to my future projects", date: "November 2025" },
-    { title: "Soy Sauce and Rice", date: "August 2025" }
+    { title: "What we get wrong about tech", date: "March 2026", href: "blogs/what-we-get-wrong-about-tech.html" },
+    { title: "A Git guide to my future projects", date: "November 2025", href: "blogs/git-guide-to-future-projects.html" },
+    { title: "Soy Sauce and Rice", date: "August 2025", href: "blogs/soy-sauce-and-rice.html" }
   ]
 };
 
@@ -84,9 +93,36 @@ function setBio(mode) {
     image.alt = content.image.alt;
     image.loading = "lazy";
     const caption = document.createElement("figcaption");
-    caption.textContent = content.image.caption;
+    const credit = document.createElement("a");
+    credit.href = content.image.creditHref;
+    credit.textContent = content.image.caption;
+    caption.append(credit);
     figure.append(image, caption);
     bio.append(figure);
+  }
+  if (content.social) {
+    const social = document.createElement("p");
+    const socialLink = document.createElement("a");
+    socialLink.href = content.social.href;
+    socialLink.textContent = content.social.label;
+    social.append(socialLink);
+    bio.append(social);
+  }
+  if (content.notion) {
+    const notionLink = document.createElement("a");
+    notionLink.className = "notion-link";
+    notionLink.href = content.notion.href;
+    notionLink.target = "_blank";
+    notionLink.rel = "noopener noreferrer";
+    notionLink.setAttribute("aria-label", "Visit Notion");
+    const notionLogo = document.createElement("img");
+    notionLogo.src = content.notion.logo;
+    notionLogo.alt = "Notion logo";
+    notionLogo.width = 40;
+    notionLogo.height = 40;
+    notionLogo.loading = "lazy";
+    notionLink.append(notionLogo);
+    bio.append(notionLink);
   }
   buttons.forEach(b => b.setAttribute("aria-pressed", String(b.dataset.mode === mode)));
 }
