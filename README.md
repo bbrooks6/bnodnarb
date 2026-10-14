@@ -1,22 +1,16 @@
-# [Project Name]
+# p1
 
-> Replace this sentence with a short description of your project.
+A small, text-first personal website built with plain HTML, CSS, and JavaScript. It includes a homepage with short and extended bios, notes and blog listings, and an interactive Pomodoro timer demo.
 
-## About
+## Preview locally
 
-This repository contains **Minimal Notes**, a small, text-first personal
-website built with plain HTML, CSS, and JavaScript. It has a bio, lists of
-notes and blog posts, and an interactive Pomodoro timer demo.
+No build step or package installation is required. Open `src/index.html` in a browser, or serve the `src` directory with any static file server.
 
-Use this section to explain what the project does, who it is for, and why you
-built it.
+The homepage links to these published pages:
 
-## Features
-
-- Responsive personal homepage with short and extended bio views
-- Notes and blog pages
-- Interactive Pomodoro timer demo embedded in a blog post
-- No build step or package installation required
+- Note: `src/notes/how-i-learn-new-tools.html`
+- Blog post: `src/blogs/useful-vibe-coded-apps.html`
+- Pomodoro demo: `src/demos/claude-pomodoro.html`
 
 ## Project structure
 
@@ -25,27 +19,24 @@ src/
 ├── index.html
 ├── assets/
 │   ├── css/styles.css
-│   ├── images/logo.png
 │   └── js/app.js
 ├── blogs/
+│   └── useful-vibe-coded-apps.html
 ├── demos/
+│   ├── assets/
+│   │   ├── mascot-done.gif
+│   │   └── mascot-work.gif
+│   └── claude-pomodoro.html
 └── notes/
+    └── how-i-learn-new-tools.html
 ```
 
-## Getting started
+## Customize the site
 
-Open `src/index.html` in a browser to view the site locally. You can
-also publish the `src` folder with a static hosting service.
-
-## Customize
-
-- Edit the bio, notes, and blog entries in `src/assets/js/app.js`.
-- Update layout and colors in `src/assets/css/styles.css`.
-- Add or edit pages in `src/notes/` and `src/blogs/`.
-- Replace the logo at `src/assets/images/logo.png`.
-
-Replace these instructions with any setup, development, or contribution
-guidance specific to your project.
+- Edit the bio and homepage listings in `src/assets/js/app.js`.
+- Update layout, colors, and responsive styles in `src/assets/css/styles.css`.
+- Add note or blog pages under `src/notes/` or `src/blogs/`, then add their titles and relative links to `src/assets/js/app.js`.
+- Update the Pomodoro demo in `src/demos/claude-pomodoro.html`. Its mascot GIFs are in `src/demos/assets/`.
 
 ## Built with
 
@@ -53,11 +44,6 @@ guidance specific to your project.
 - CSS
 - JavaScript
 
-## Author
-
-[Your name](https://github.com/your-username)
-
 ## License
 
-[Choose a license](https://choosealicense.com/) and add its text to a `LICENSE`
-file, or remove this section if the project is not yet licensed.
+No license is currently included. Add a `LICENSE` file if you intend to grant others permission to use, modify, or distribute this project.
