@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f6f1" />
+    <meta name="description" content="Find a seat at the table. Discover and host welcoming community meals and gatherings around Florida." />
+    <title>OpenDoor — Find a seat at the table</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="OpenDoor home"><span class="brand-mark">o<span></span></span><span>open<span class="brand-light">door</span></span></a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-link active" data-view="discover">Discover</button>
+        <button class="nav-link" data-view="hosting">My events</button>
+        <button class="nav-link" data-view="about">Our community</button>
+      </nav>
+      <div class="header-actions"><button class="profile-button" id="profileButton"><span class="avatar avatar-small">M</span><span>Maya · Guest</span><span class="chevron">⌄</span></button><button class="mobile-menu" id="mobileMenu" aria-label="Open navigation">☰</button></div>
+    </header>
+
+    <main id="home">
+      <section class="hero" id="hero">
+        <div class="hero-copy">
+          <span class="eyebrow"><span class="sun-icon">✳</span> GOOD THINGS HAPPEN AROUND THE TABLE</span>
+          <h1>There’s always<br />room for <em>one more.</em></h1>
+          <p>Find a seat, share a meal, and meet the people who make your neighborhood feel like home.</p>
+          <div class="hero-actions"><button class="button button-dark" id="exploreButton">Find your people <span>↗</span></button><button class="button button-outline" id="heroHostButton">Host a gathering <span>＋</span></button></div>
+          <div class="social-proof"><div class="avatar-stack"><span class="avatar a1">M</span><span class="avatar a2">A</span><span class="avatar a3">T</span><span class="avatar a4">L</span></div><span><strong>Gainesville demo</strong> · sample events, fictional people</span></div>
+        </div>
+        <div class="hero-art" aria-label="Illustration of a community dinner table">
+          <div class="art-sun"></div><div class="art-caption"><span class="caption-dot"></span> A LITTLE CLOSER TO HOME <span>↗</span></div>
+          <div class="table-scene"><div class="plant plant-left">✳</div><div class="plant plant-right">✳</div><div class="plate plate-one"></div><div class="plate plate-two"></div><div class="plate plate-three"></div><div class="bowl">🥗</div><div class="bread">🥖</div><div class="person person-one"><i></i><b></b></div><div class="person person-two"><i></i><b></b></div><div class="person person-three"><i></i><b></b></div><div class="table"></div><div class="chair chair-one"></div><div class="chair chair-two"></div><div class="chair chair-three"></div><div class="art-note note-one">good food <span>✦</span></div><div class="art-note note-two">good neighbors <span>✦</span></div></div>
+          <div class="art-location"><span>⌖</span> GAINESVILLE, FL · DEMO</div>
+        </div>
+      </section>
+
+      <section class="discovery section-wrap" id="discoverySection">
+        <div class="section-heading"><div><span class="eyebrow eyebrow-muted">PULL UP A CHAIR</span><h2>Good things are <em>close by.</em></h2></div><button class="button button-text" id="allEventsButton">See all gatherings <span>→</span></button></div>
+        <div class="search-bar">
+          <label class="search-field"><span class="field-icon">⌖</span><span class="field-label">NEAR</span><input id="locationFilter" type="text" value="Gainesville, FL" aria-label="Search by Florida city" /><button id="locationClear" aria-label="Clear location">×</button></label>
+          <label class="search-field"><span class="field-icon">▦</span><span class="field-label">WHEN</span><select id="dateFilter" aria-label="Filter by date"><option value="any">Any day</option><option value="weekend">This weekend</option><option value="week">This week</option></select></label>
+          <button class="button button-dark search-submit" id="searchButton"><span>⌕</span> Find a gathering</button>
+        </div>
+        <div class="category-row" id="categoryRow"><button class="category active" data-category="all">All gatherings</button><button class="category" data-category="meal">Meals & potlucks</button><button class="category" data-category="outdoors">Outdoors</button><button class="category" data-category="family">Family friendly</button><button class="category" data-category="creative">Make & create</button><button class="filter-button" id="moreFilters">☷ <span>Filters</span></button></div>
+        <div class="results-meta"><span id="resultsCount">Gatherings near Gainesville, FL</span><button class="sort-control" id="sortButton">Soonest first <span>⌄</span></button></div>
+        <div class="event-grid" id="eventGrid"></div>
+        <div class="empty-state hidden" id="emptyState"><div>✳</div><h3>No gatherings found just yet</h3><p>Try another Florida city or clear your filters. Your next good thing may be just around the corner.</p><button class="button button-outline" id="clearFilters">Clear filters</button></div>
+        <div class="load-more-wrap"><button class="button button-outline load-more" id="loadMore">Show more gatherings <span>↓</span></button></div>
+      </section>
+
+      <section class="host-banner section-wrap"><div class="host-banner-art"><span class="banner-sun">✳</span><span class="banner-doodle">✿</span><div class="banner-plate">🥘</div></div><div class="host-banner-copy"><span class="eyebrow eyebrow-light">YOUR TABLE, YOUR WAY</span><h2>Make room for<br /><em>someone new.</em></h2><p>It doesn’t have to be fancy. A pot of something good and a few open chairs can change someone’s whole week.</p><button class="button button-cream" id="bannerHostButton">Host your first gathering <span>↗</span></button></div><div class="banner-side-note">A GOOD NEIGHBORHOOD<br />STARTS WITH A HELLO <span>✳</span></div></section>
+
+      <footer class="site-footer"><a class="brand" href="#home"><span class="brand-mark">o<span></span></span><span>open<span class="brand-light">door</span></span></a><span>Fictional Gainesville demo · data stays in this browser. <span class="footer-sun">✳</span></span><div class="footer-links"><button data-view="about">Community guidelines</button><button id="footerSafety">Safety & support</button></div></footer>
+    </main>
+
+    <div class="modal-backdrop hidden" id="modalBackdrop"><section class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="modalClose" aria-label="Close">×</button><div id="modalContent"></div></section></div>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
